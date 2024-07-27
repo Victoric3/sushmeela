@@ -6,6 +6,7 @@ import Loader from "../GeneralScreens/Loader";
 const RegisterScreen = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -40,6 +41,7 @@ const RegisterScreen = () => {
           username,
           email,
           password,
+          adminPassword
         })}
         );
         const data = await response.json()
@@ -130,6 +132,23 @@ const RegisterScreen = () => {
               <label htmlFor="email">E-mail</label>
 
 
+            </div>
+            <div className="input-wrapper">
+
+              <input
+                type="password"
+                required
+                id="adminPassword"
+                autoComplete="true"
+                placeholder="Admin Passwork"
+                onChange={(e) => setAdminPassword(e.target.value)}
+                value={password}
+                tabIndex={2}
+              />
+              <label htmlFor="adminPassword">
+                Admin Password
+
+              </label>
             </div>
             <div className="input-wrapper">
 
