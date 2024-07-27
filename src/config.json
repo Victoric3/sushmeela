@@ -1,0 +1,21 @@
+{
+    "baseUrl" : "https://bigtc-backend.onrender.com",
+    "copyright": "SushMeela. All Rights Reserved",
+    "Name": "SushMeela",
+    "AppColor": "#800080",
+    "baseColor": "#333333",
+    "whiteColor": "#FFFFFF",
+    "blackColor": "#333",
+    "ContactEmail": "bigtchub@gmail.com",
+    "faceBook": "#",
+    "linkedIn": "#",
+    "twiter": "#",
+    "instagram": "#",
+    "youtube": "#",
+    "phone1": "+1234567890",
+    "phone2": "+1234567890",
+    "email": "susuhmiwritess@gmail.com",
+    "location": "pakistan",
+    "dev": false
+
+}
