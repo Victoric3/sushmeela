@@ -7,7 +7,6 @@ import logo from '../../img/logo.png'
 import slugify from 'slugify';
 import { useNavigate } from 'react-router-dom';
 import NavLinks from '../utilities/navLinks';
-import ContactForm from './contactForm';
 
 const Footer = () => {
   const stories = JSON?.parse(localStorage.getItem('stories'))

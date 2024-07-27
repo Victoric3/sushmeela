@@ -82,6 +82,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    const currentRef = topRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setShowBackToTop(!entry.isIntersecting);
@@ -93,13 +94,13 @@ const Home = () => {
       }
     );
 
-    if (topRef.current) {
-      observer.observe(topRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (topRef.current) {
-        observer.unobserve(topRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [topRef]);

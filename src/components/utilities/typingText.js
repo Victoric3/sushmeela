@@ -1,6 +1,5 @@
 import React from 'react';
 import { ReactTyped as Typed } from 'react-typed';
-import configData from '../../config.json';
 import { useMediaQuery } from "react-responsive";
 import sushmeelaImage from '../../img/logo.png'
 
