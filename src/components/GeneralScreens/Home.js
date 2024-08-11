@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import "../../Css/flexContainer.css";
 import instance from "../../Context/axiosConfig";
@@ -40,6 +40,7 @@ const Home = () => {
   const [pages, setPages] = useState(1);
   const { setCallScheduled, callScheduled } = useContext(AuthContext);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const top = useRef(null);
 
   useEffect(() => {
     const getStories = async () => {
@@ -77,9 +78,10 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    const currentRef = top.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowBackToTop(!entry.isIntersecting);        
+        setShowBackToTop(!entry.isIntersecting);
       },
       {
         root: null,
@@ -88,12 +90,16 @@ const Home = () => {
       }
     );
 
-      observer.observe(document.getElementById('top'));
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
 
     return () => {
-        observer.unobserve(document.getElementById('top'));
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
-  }, []);
+  }, [top]);
 
   return (
     <div style={{ background: configData.background }}>
@@ -157,17 +163,16 @@ const Home = () => {
             textDecoration: "none",
             zIndex: 8,
             backdropFilter: "blur(10px)",
-            background: "#ccc",
-            
+            background: "#ccc"
           }}
         >
           <BiArrowToTop
-            style={{ fontSize: "30px", color: configData.AppColor }}
+            style={{ fontSize: "40px", color: configData.AppColor }}
           />
         </a>
       )}
 
-      <div style={{ height: "75px" }} id="top"></div>
+      <div style={{ height: "75px" }} id="top" ref={top}></div>
       <AboutSush />
       <div>
         <ServicesComponent />
