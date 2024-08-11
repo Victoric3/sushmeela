@@ -27,47 +27,10 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-        <Route path="/" element={<LayoutsWithHeaderStory />}>
-            <Route exact path="/addstory" element={<PrivateRoute />}>
-              <Route exact path="/addstory" element={<AddStory />} />
-            </Route>
-            <Route exact path="/story/:slug" element={<DetailStory />} />
-            <Route exact path="/story/:slug/like" element={<PrivateRoute />}>
-              <Route exact path="/story/:slug/like" element={<DetailStory />} />
-            </Route>
-            <Route exact path="/story/:slug/edit" element={<PrivateRoute />}>
-              <Route exact path="/story/:slug/edit" element={<EditStory />} />
-            </Route>
-            <Route exact path="/story/:slug/delete" element={<PrivateRoute />}>
-              <Route
-                exact
-                path="/story/:slug/delete"
-                element={<DetailStory />}
-              />
-            </Route>
-            <Route exact path="/readList" element={<PrivateRoute />}>
-              <Route exact path="/readList" element={<ReadListPage />} />
-            </Route>
-            <Route exact path="/profile" element={<PrivateRoute />}>
-              <Route exact path="/profile" element={<Profile />} />
-            </Route>
-
-            <Route exact path="/edit_profile" element={<PrivateRoute />}>
-              <Route exact path="/edit_profile" element={<EditProfile />} />
-            </Route>
-
-            <Route exact path="/change_Password" element={<PrivateRoute />}>
-              <Route
-                exact
-                path="/change_Password"
-                element={<ChangePassword />}
-              />
-            </Route>
-          </Route>
           <Route path="/" element={<LayoutsWithHeader />}>
             <Route path="*" element={<NotFound />} />
 
-            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
 
 
 
@@ -97,6 +60,43 @@ const App = () => {
             element={<ResetPasswordScreen />}
           />
           <Route exact path="/sitemap.xml" element={<SitemapViewer />} />
+              <Route path="/" element={<LayoutsWithHeaderStory />}>
+                  <Route exact path="/addstory" element={<PrivateRoute />}>
+                    <Route exact path="/addstory" element={<AddStory />} />
+                  </Route>
+                  <Route exact path="/story/:slug" element={<DetailStory />} />
+                  <Route exact path="/story/:slug/like" element={<PrivateRoute />}>
+                    <Route exact path="/story/:slug/like" element={<DetailStory />} />
+                  </Route>
+                  <Route exact path="/story/:slug/edit" element={<PrivateRoute />}>
+                    <Route exact path="/story/:slug/edit" element={<EditStory />} />
+                  </Route>
+                  <Route exact path="/story/:slug/delete" element={<PrivateRoute />}>
+                    <Route
+                      exact
+                      path="/story/:slug/delete"
+                      element={<DetailStory />}
+                    />
+                  </Route>
+                  <Route exact path="/readList" element={<PrivateRoute />}>
+                    <Route exact path="/readList" element={<ReadListPage />} />
+                  </Route>
+                  <Route exact path="/profile" element={<PrivateRoute />}>
+                    <Route exact path="/profile" element={<Profile />} />
+                  </Route>
+      
+                  <Route exact path="/edit_profile" element={<PrivateRoute />}>
+                    <Route exact path="/edit_profile" element={<EditProfile />} />
+                  </Route>
+      
+                  <Route exact path="/change_Password" element={<PrivateRoute />}>
+                    <Route
+                      exact
+                      path="/change_Password"
+                      element={<ChangePassword />}
+                    />
+                  </Route>
+                </Route>
         </Routes>
       </div>
     </Router>

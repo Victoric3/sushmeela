@@ -33,8 +33,8 @@ const HeaderStory = () => {
   return (
     <div className="header-story">
       <div className="averager-story">
-        <div className="logo_container" onClick={() => navigate("/home")}>
-          <Link to="/home">
+        <div className="logo_container" onClick={() => navigate("/")}>
+          <Link to="/">
             <img src={logo} alt="logo" className="logo" />
           </Link>
           <div className="logo-caption-wrapper">
