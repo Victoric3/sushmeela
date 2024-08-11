@@ -252,13 +252,13 @@ const DetailStory = () => {
         loading ? <Loader /> :
           <>
 
-            <div className='Inclusive-detailStory-page' style={{marginTop: '95px'}}>
+            <div className='Inclusive-detailStory-page'>
 
               <div className="top_detail_wrapper">
                 <Link to={'/'} >
                   <FiArrowLeft />
                 </Link>
-                <h5>{story.title}</h5>
+                <h5 style={{color: '#fff'}}>{story.title}</h5>
 
                 <div className='story-general-info'>
 
@@ -346,7 +346,7 @@ const DetailStory = () => {
 
                 </div>
 
-                <div className='content' dangerouslySetInnerHTML={{ __html: processCodeBlocks(story.content) }}>
+                <div className='content' style={{color: '#fff'}} dangerouslySetInnerHTML={{ __html: processCodeBlocks(story.content) }}>
                 </div>
 
               </div>

@@ -9,37 +9,37 @@ import { AuthContext } from "../../Context/AuthContext";
 
 const contentTypes = [
   {
-    navLink: "/services/animation",
+    navLink: `/story/the-secret-sauce-behind-seo-optimized-content`,
     navName: "Seo Writting",
     img: seo,
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/blogging-done-right-how-to-create-content-that-engages-and-converts`,
     navName: "Ads/Marketing",
     img: "https://i.ibb.co/zRQ6brc/target-2070972-1920.png",
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/crafting-youtube-scripts-that-keep-viewers-hooked`,
     navName: "YouTube Scripts",
     img: YouTube,
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/blogging-done-right-how-to-create-content-that-engages-and-converts`,
     navName: "Blog Writting",
     img: Blog,
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/content-that-connects-the-power-of-social-media-writing`,
     navName: "Content writting",
     img: SocialMedia,
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/financial-content-that-informs-and-empowers`,
     navName: "Financial Advice",
     img: FinancialAdvice,
   },
   {
-    navLink: "/services/ads-marketing",
+    navLink: `/story/educating-through-content-how-to-make-learning-engaging`,
     navName: "Educational Content",
     img: EducationalContent,
   },

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AiOutlineUpload } from "react-icons/ai";
-import { FiArrowLeft } from "react-icons/fi";
 import "../../Css/AddStory.css";
 import RichTextEditor from "./Editor";
 import { useNavigate } from "react-router-dom";
@@ -23,11 +22,8 @@ const AddStory = () => {
   }
 
   const [title, setTitle] = useState(question?.question);
-  const [type, setType] = useState("");
   const [image, setImage] = useState("");
-  const [hover, setHover] = useState(false);
   const navigate = useNavigate();
-  const viewExplanation = localStorage.getItem("viewExplanation");
   const imageEl = useRef(null);
   const editorEl = useRef(null);
   const exam = localStorage.getItem("examBody");
@@ -51,7 +47,6 @@ const AddStory = () => {
     setIsLoading(true);
     const formdata = new FormData();
     formdata.append("title", title);
-    formdata.append("type", type);
     formdata.append("image", image);
     formdata.append("content", content);
     // const form = { title, content, exam }
@@ -63,7 +58,7 @@ const AddStory = () => {
       localStorage.removeItem("content");
       clearInputs();
       setTimeout(() => {
-        setSuccess("");
+        setSuccess(null);
         navigate("/");
       }, 4000);
       setIsLoading(false);
@@ -72,11 +67,12 @@ const AddStory = () => {
         setError("");
         setAction(false);
       }, 7000);
+      console.log(error);
+      
       if (
         error?.response?.data?.error.trim() === "Duplicate Field Value Enter"
       ) {
         setAction(true);
-        localStorage.removeItem("question");
       } else {
         setError(error?.response?.data?.error || "Something went wrong");
       }
@@ -99,7 +95,7 @@ const AddStory = () => {
     navigate(`/story/${titleSlug}`);
   };
   return (
-    <div className="Inclusive-addStory-page " style={{marginTop: '95px'}}>
+    <div className="Inclusive-addStory-page">
       {action ? (
         <div className="story-message-card">
           <p>
@@ -111,40 +107,6 @@ const AddStory = () => {
               click to view
             </span>
           </p>
-        </div>
-      ) : (
-        ""
-      )}
-      <button
-        onClick={() => {
-          setHover(!hover);
-        }}
-      >
-        <FiArrowLeft />
-      </button>
-      {hover ? (
-        <div className="story-nav-card-wrapper">
-          <div
-            className="story-nav-card-element"
-            style={{
-              borderBottom: "1px solid #fadedf",
-            }}
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Back To Home
-          </div>
-          <div
-            className="story-nav-card-element"
-            onClick={() => {
-              viewExplanation
-                ? navigate("/questionDisplay")
-                : navigate("/customExam");
-            }}
-          >
-            Back To Study
-          </div>
         </div>
       ) : (
         ""
@@ -177,20 +139,6 @@ const AddStory = () => {
           </div>
         )}
 
-        <select
-          required
-          id="type"
-          onChange={(e) => setType(e.target.value)}
-          value={type}
-          className="select-field"
-        >
-          <option value="" disabled>
-            Select Type
-          </option>
-          <option value="Experience">Experience</option>
-          <option value="Story">Story</option>
-        </select>
-
         <input
           type="text"
           required
@@ -203,8 +151,8 @@ const AddStory = () => {
         <RichTextEditor />
 
         <div class="StoryImageField">
-          <AiOutlineUpload />
-          <div class="txt">
+          <AiOutlineUpload style={{color: "#fff"}} />
+          <div class="txt" style={{color: "#fff"}}>
             {image
               ? image.name
               : " Include a high-quality image in your story to make it more inviting to readers."}
@@ -222,6 +170,7 @@ const AddStory = () => {
           type="submit"
           disabled={title || isLoading ? false : true}
           className={title ? "addStory-btn" : "dis-btn"}
+          style={{background: "#800080"}}
         >
           Publish{" "}
         </button>

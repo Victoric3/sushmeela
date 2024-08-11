@@ -37,9 +37,9 @@ const Story = ({ story }) => {
                     </h5>
 
 
-                    <p className="story-text"dangerouslySetInnerHTML={{__html : truncateContent( story.content) +"..."}}>
+                    <p className="story-text"dangerouslySetInnerHTML={{__html : truncateContent( story.content) +"..."}} style={{color: '#ccc'}}>
                         </p>
-                    <p className="story-createdAt">{editDate(story.createdAt)} 
+                    <p className="story-createdAt" style={{color: '#ccc'}}>{editDate(story.createdAt)} 
                     </p>
                 </div>
             </Link>

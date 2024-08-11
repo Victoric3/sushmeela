@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "../../Css/flexContainer.css";
 import instance from "../../Context/axiosConfig";
@@ -40,7 +40,6 @@ const Home = () => {
   const [pages, setPages] = useState(1);
   const { setCallScheduled, callScheduled } = useContext(AuthContext);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const topRef = useRef(null);
 
   useEffect(() => {
     const getStories = async () => {
@@ -78,33 +77,26 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const currentRef = topRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowBackToTop(!entry.isIntersecting);
+        setShowBackToTop(!entry.isIntersecting);        
       },
       {
         root: null,
-        rootMargin: "0px",
-        threshold: 0,
+        rootMargin: "700px",
+        threshold: 1,
       }
     );
 
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+      observer.observe(document.getElementById('top'));
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+        observer.unobserve(document.getElementById('top'));
     };
-  }, [topRef]);
+  }, []);
 
   return (
-    <div style={{
-      background: configData.background
-    }}>
+    <div style={{ background: configData.background }}>
       <Helmet>
         <title>{`Home | ${configData.Name}`}</title>
         <meta
@@ -164,7 +156,9 @@ const Home = () => {
             padding: "10px",
             textDecoration: "none",
             zIndex: 8,
-            backdropFilter: "blur(15px)",
+            backdropFilter: "blur(10px)",
+            background: "#ccc",
+            
           }}
         >
           <BiArrowToTop

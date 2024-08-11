@@ -36,7 +36,7 @@ const AboutSushmeela = () => {
         <div className="secondImageWrapper">
           <img src={secondImage} alt="Second" className="image" />
         </div>
-          <img src={star} alt="star" className="star" />
+          <img src={star} alt="star" className="star1" />
       </div>
     </div>
   );

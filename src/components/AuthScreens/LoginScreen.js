@@ -3,6 +3,7 @@ import "../../Css/Login.css"
 import { Link, useNavigate } from "react-router-dom";
 import configData from '../../config.json'
 import Loader from "../GeneralScreens/Loader";
+import login from '../../img/ink-150697_1920-removebg-preview.png'
 
 const LoginScreen = () => {
   const [identity, setIdentity] = useState("");
@@ -128,7 +129,7 @@ const LoginScreen = () => {
 
         <div className="login-banner-section ">
 
-          <img src="login.png" alt="banner" width="400px" />
+          <img src={login} alt="banner" width="400px" />
         </div>
 
       </div>

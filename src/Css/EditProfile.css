@@ -23,11 +23,12 @@
     outline: 0;
     width: 100%;
     padding: 18px;
-    border: #d1d1d1 solid 1px;
+    border: #800080 solid 1px;
     border-radius: 5px;
     font-size: 1rem;
-    color: #252525;
+    color: #fff;
     padding-top: 22px;
+    background: transparent;
 }
 
 .Inclusive-editprofile-page form .input-wrapper label {
@@ -36,17 +37,17 @@
     left: 14px;
     font-size: 0.8rem;
     font-family: 'Inter', sans-serif;
-    background-color: white;
-    color: #646464;
+    background-color: transparent;
+    color: #ccc;
     padding: 0 8px;
 }
 
 .Inclusive-editprofile-page form input:focus-within {
-    border: #0205b1 solid 1px;
+    border: #800080de solid 1px;
 }
 
 .Inclusive-editprofile-page form input:focus+label {
-    color: #0205b1 !important;
+    color: #fff !important;
 }
 
 .profile-ımg-upld-wrapper {

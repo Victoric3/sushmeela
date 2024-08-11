@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 import NavLinks from "../utilities/navLinks";
 import configData from '../../config.json'
 import { useMediaQuery } from "react-responsive";
@@ -35,12 +35,13 @@ const ServicesComponent = () => {
     whiteSpace: 'nowrap'
   };
   const navLinks = NavLinks();
+  const navigate = useNavigate();
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px'}}>
     <h2 style={{color: configData.greenColor, marginBottom: '30px'}}>Range of Expert Services</h2>
     <div style={containerStyle}>
       {navLinks[1].children.map((service, index) => (
-        <Link to={service.navLink} key={index} style={serviceItemStyle}>
+        <Link onClick={() => navigate(service.navLink)} key={index} style={serviceItemStyle}>
           <img
             src={service.img}
             alt={service.navName}

@@ -11,7 +11,7 @@ import { BiMenu, BiX } from "react-icons/bi";
 import Drawer from "./Drawer";
 
 const Header = () => {
-  const isSmallScreen = useMediaQuery({ maxWidth: "600px" });
+  const isSmallScreen = useMediaQuery({ maxWidth: "912px" });
   const navigate = useNavigate();
   const navLinks = NavLinks();
   const [showChildren, setShowChildren] = useState(false);

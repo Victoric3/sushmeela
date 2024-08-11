@@ -77,7 +77,7 @@ const SearchForm = () => {
                 value={searchTerm}
             />
 
-            <button type="submit" className={searchTerm.trim() ? 'searchBtn' : 'disBtn'}  ><i> <BiSearchAlt2/> </i> </button>
+            <button type="submit" className={searchTerm.trim() ? 'searchBtn' : 'disBtn'}  style={{background: 'transparent'}}><i> <BiSearchAlt2/> </i> </button>
             
         </form>
     )

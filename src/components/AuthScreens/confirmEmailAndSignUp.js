@@ -88,7 +88,7 @@ const ConfirmEmailAndSignUp = () => {
         display: 'flex',
         alignItems: 'center',
       }}>
-      <img src={logo} alt='logo'style={{width: 'auto', height: '70px'}}/>
+      <img src={logo} alt='logo'style={{width: 'auto', height: '70px', borderRadius: '50%'}}/>
       </div>
       <h4 style={{ fontSize: '24px', color: '#000' }}>Confirm Your Email</h4>
       <p style={{ color: '#555', textAlign: 'center' }}>
@@ -114,7 +114,7 @@ const ConfirmEmailAndSignUp = () => {
             display: 'flex',
             alignItems: 'center',
           }}>
-          <img src={logo} alt='logo'style={{width: 'auto', height: '70px'}}/>
+          <img src={logo} alt='logo'style={{width: 'auto', height: '70px', borderRadius: '50%'}}/>
   
           </div>
           <p style={{ fontSize: '20px', color: '#555' }}>Verifying Your Email</p>
@@ -131,7 +131,7 @@ const ConfirmEmailAndSignUp = () => {
             display: 'flex',
             alignItems: 'center',
           }}>
-          <img src={logo} alt='logo'style={{width: 'auto', height: '70px'}}/>
+          <img src={logo} alt='logo'style={{width: 'auto', height: '70px', borderRadius: '50%'}}/>
           </div>
           <h4 style={{ fontSize: '24px', color: '#000' }}>Email Confirmation Successful</h4>
           <p style={{ color: '#555', textAlign: 'center' }}>
@@ -156,7 +156,7 @@ const ConfirmEmailAndSignUp = () => {
             display: 'flex',
             alignItems: 'center',
           }}>
-          <img src={logo} alt='logo'style={{width: 'auto', height: '70px'}}/>
+          <img src={logo} alt='logo'style={{width: 'auto', height: '70px', borderRadius: '50%'}}/>
   
           </div>
           <h4 style={{ fontSize: '24px', color: 'red' }}>Email Confirmation Failed</h4>

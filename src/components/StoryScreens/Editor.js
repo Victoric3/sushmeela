@@ -147,6 +147,7 @@ const RichTextEditor = () => {
         className="react-quill"
         placeholder="Start writing..."
         theme="snow"
+        style={{color: '#ccc'}}
       />
     </div>
   );

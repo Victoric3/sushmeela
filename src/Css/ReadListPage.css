@@ -2,6 +2,7 @@
 .Inclusive-readList-page {
     width: 700px;
     margin: 2.6rem auto;
+    color: #fff;
 }
 
 .Inclusive-readList-page h2 {
@@ -9,6 +10,7 @@
     font-size: 2.1rem;
     margin-bottom: 1.6rem;
     font-weight: bold;
+    /* color: #fff; */
 }
 
 .readList-top-block {
@@ -62,6 +64,7 @@
 .readList-story-wrapper {
     width: 100%;
     height: auto;
+    color: #fff;
 }
 
 .readList-story-wrapper .readList-story-item {
@@ -94,7 +97,6 @@
     margin-left: 9px;
     font-size: 0.7rem;
     margin-top: -2px;
-    color: rgb(63, 63, 63);
 }
 
 .story-med-block {
@@ -108,7 +110,6 @@
 }
 
 .readList-story-title a {
-    color: rgb(49, 49, 49);
     font-weight: 500;
     font-family: 'Acme', sans-serif;
     text-decoration: none;
@@ -124,7 +125,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    color: black;
+    color: #ccc;
 }
 
 @media only screen and (max-width: 730px) {

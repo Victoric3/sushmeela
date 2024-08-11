@@ -25,11 +25,13 @@
     outline: 0;
     border: none;
     border: rgb(235, 235, 235) solid 1px;
+    color: #fff;
     font-size: 1.4rem;
     padding-left: 1rem;
     font-weight: 450;
     font-family: 'Balsamiq Sans', cursive;
     border-bottom: none;
+    background: transparent;
 }
 
 
@@ -46,11 +48,11 @@
     cursor: pointer;
     margin-top: 1rem;
     position: relative;
+    color: #fff;
 }
 
 .StoryImageField svg {
     font-size: 1.4rem;
-    color: rgba(0, 0, 0, 0.7);
 }
 
 .StoryImageField .txt {
@@ -58,7 +60,6 @@
     height: auto;
     margin-top: 14px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.7);
 }
 
 .StoryImageField [type="file"] {

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../../Css/contact.css";
 import configData from "../../config.json";
-import axios from "../../Context/axiosConfig";
+import instance from "../../Context/axiosConfig";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BiCalendarEvent } from "react-icons/bi";
-import { IoClose } from "react-icons/io5"; // Import close icon
+import { IoClose } from "react-icons/io5";
+import Loader from "./Loader";
 
 const ContactForm = ({ title }) => {
   const [name, setName] = useState("");
@@ -15,11 +16,31 @@ const ContactForm = ({ title }) => {
   const [message, setMessage] = useState("");
   const [date, setDate] = useState(null);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); // State to toggle calendar
-
+  const [isLoading, setIsLoading] = useState(false)
+  
+  
   const submit = async (e) => {
     e.preventDefault();
-    const form = { name, email, service, budget, message, date };
-    await axios.post("/call/scheduleCall", form);
+    if(!date){
+      return alert("please pick a date, by clicking the top right icon")
+    }
+    const formattedDate = date?.toLocaleString();
+    const form = { name, email, service, budget, message, date: formattedDate };
+    try{
+      setIsLoading(true)
+      const { data } = await instance.post("/call/scheduleCall", form, {
+        headers: {
+        "content-type": "application/json",
+      }});
+      if(data.status === 'success'){
+        alert('success! ' + data.message)
+        setIsLoading(false)
+      }
+    }catch(error){
+      // console.log(error);
+      setIsLoading(false)
+      alert(error?.response?.data?.errorMessage || "Something went wrong")
+    }
   };
 
   const serviceTypes = [
@@ -33,7 +54,9 @@ const ContactForm = ({ title }) => {
   ];
 
   return (
+    <>
     <div className="form-container">
+      {isLoading && <Loader />}
       <div className="form-title">
         <h2 style={{fontSize: '25px'}}>{title}</h2>
         {!isCalendarOpen ? (
@@ -126,7 +149,7 @@ const ContactForm = ({ title }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-            />
+              />
           </div>
           <button
             type="submit"
@@ -138,6 +161,7 @@ const ContactForm = ({ title }) => {
         </form>
       )}
     </div>
+            </>
   );
 };
 
